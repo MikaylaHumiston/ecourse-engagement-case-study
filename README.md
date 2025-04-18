@@ -23,6 +23,14 @@ This project analyzes learner behavior on a digital course platform using Python
 | `/data`      | Cleaned CSV used for Power BI input |
 | `/docs`      | Project summary slides or PDF export (optional) |
 
+## Databricks Workflow
+
+- Used Spark and Delta to build a raw-to-clean pipeline
+- Saved raw, cleaned, and aggregated data as managed Delta tables
+- Added alerts to monitor quality and completion trends
+- Notebook: [`ecourse_pipeline.ipynb`](notebooks/ecourse_pipeline.ipynb)
+- Summary: [`databricks_pipeline_summary.md`](docs/databricks_pipeline_summary.md)
+
 ## Key Insights
 
 - Completion rates are strongly associated with videos watched and quizzes taken
