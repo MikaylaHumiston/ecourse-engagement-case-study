@@ -10,25 +10,25 @@ This Databricks notebook implements a simple data engineering pipeline for the e
 
 ## Silver Table
 
-- Renamed columns to `snake_case`
-- Added human-readable labels for:
-  - `device_type` → `device_type_label`
-  - `course_completion` → `course_completion_label`
+- Renamed columns using snake case
+- Added labels for readability:
+  - `device_type` to `device_type_label` (0 = Desktop, 1 = Mobile)
+  - `course_completion` to `course_completion_label` (0 = Not Completed, 1 = Completed)
 - Stored as `silver_ecourse_engagement`
 
 ## Data Quality
 
-- Checked for missing values
-- Validated unique value counts
-- Optional assertions and null filtering
+- Check for missing values
+- Validate unique value counts
+- Check for invalid values (ex: negative values for quiz_score)
 
 ## Alert
 
-- SQL alert monitors `% of null quiz_scores`
+- SQL alert monitors null or invalid quiz_score values
 - Trigger: null rate > 5%
-- Configured via Databricks SQL Alert UI
+-
 
 ## Notes
 
 - Pipeline is manually triggered for now
-- Data quality logic can be scaled into Delta Live Tables (DLT) or jobs
+- Data quality maintenance can be built into Delta Live Tables or jobs
