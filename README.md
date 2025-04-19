@@ -3,46 +3,36 @@ This project analyzes learner behavior on a digital course platform using Python
 
 ## Project Objectives
 
-- Explore learner engagement using behavioral and performance data
-- Identify patterns in course completion, quiz scores, and device usage
-- Build dashboards for stakeholder reporting and strategy
-- Simulate a real-world data pipeline with Databricks features
+- Explore learner engagement using activity and performance data
+- Identify patterns associated with course completion
+- Build dashboards in both Power BI and Databricks for stakeholder reporting
+- Simulate a real-world data pipeline with Databricks features (notebooks, jobs, alerts, Unity Catalog, delta tables, etc)
 
 ## Tools Used
 
-- **Python + Jupyter Notebook** (data cleaning, feature engineering, ML modeling)
-- **Power BI Desktop** (interactive dashboard development)
-- **Databricks** (data ingestion, pipeline automation, governance)
-
-## Project Structure
-
-| Folder       | Description |
-|--------------|-------------|
-| `/notebooks` | Python notebook and Databricks pipeline steps |
-| `/powerbi`   | Dashboard screenshots (overview, behavior, devices) |
-| `/data`      | Cleaned CSV used for Power BI input |
-| `/docs`      | Project summary slides or PDF export (optional) |
+- **Python (pandas/matplotlib) & PySpark** (data cleaning, transformations, visualizations, modeling)
+- **Jupyter Notebook** (functional presentation of python scripts/visualiatons)
+- **Power BI Desktop** (interactive dashboard)
+- **Databricks** (data ingestion, pipeline automation, governance, dashboard)
 
 ## Databricks Workflow
 
-- Used Spark and Delta to build a raw-to-clean pipeline
-- Saved raw, cleaned, and aggregated data as managed Delta tables
-- Added alerts to monitor quality and completion trends
-- Notebook: [`ecourse_pipeline.ipynb`](notebooks/ecourse_pipeline.ipynb)
-- Summary: [`databricks_pipeline_summary.md`](docs/databricks_pipeline_summary.md)
+- Use Spark and delta tables to build a raw-to-clean (bronze-to-gold) pipeline
+- Save raw, cleaned, and aggregated data as managed Delta tables
+- Use Jobs for automating data management tasks
+- Add alerts to monitor quality and completion trends
 
 ## Key Insights
 
-- Completion rates are strongly associated with videos watched and quizzes taken
-- Quiz scores are generally stable across categories, but Science lags slightly
+- Completion rate/status is associated with number of videos watched/quizzes taken
+- Quiz scores are generally stable across categories, but Science is slightly behind
 - Mobile users are slightly less likely to complete courses than desktop users
 
 ## Next Steps
 
-- Add anomaly detection to flag low-performing course categories
-- Deploy dashboards on a shared workspace or internal portal
 - Set up Databricks Jobs and Alerts to automate weekly insight delivery
+-
 
 ## Note on Data
 
-The dataset is **synthetic** and used for educational and demonstration purposes. Source: [Kaggle – Predict Online Course Engagement Dataset](https://www.kaggle.com/datasets/rabieelkharoua/predict-online-course-engagement-dataset)
+The dataset is synthetic and intended for educational and demonstration purposes. Source: [Kaggle – Predict Online Course Engagement Dataset](https://www.kaggle.com/datasets/rabieelkharoua/predict-online-course-engagement-dataset)
